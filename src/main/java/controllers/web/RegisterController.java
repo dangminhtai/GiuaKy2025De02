@@ -2,26 +2,23 @@ package controllers.web;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import models.User;
 import services.IUserService;
 import services.UserServiceImpl;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = { "/login" })
-public class LoginController extends HttpServlet {
+@WebServlet(urlPatterns = { "/register" })
+public class RegisterController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     IUserService userService = new UserServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/web/login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/web/register.jsp").forward(req, resp);
     }
 
     @Override
@@ -32,16 +29,18 @@ public class LoginController extends HttpServlet {
 
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String fullname = req.getParameter("fullname");
+        String email = req.getParameter("email");
+        String phone = req.getParameter("phone");
 
-        User user = userService.login(username, password);
+        boolean isSuccess = userService.register(username, password, email, fullname, phone);
 
-        if (user != null) {
-            HttpSession session = req.getSession(true);
-            session.setAttribute("account", user);
-            resp.sendRedirect(req.getContextPath() + "/home");
-        } else {
-            req.setAttribute("message", "Tài khoản hoặc mật khẩu không đúng");
+        if (isSuccess) {
+            req.setAttribute("message", "Đăng ký thành công");
             req.getRequestDispatcher("/WEB-INF/views/web/login.jsp").forward(req, resp);
+        } else {
+            req.setAttribute("error", "Tên đăng nhập đã tồn tại");
+            req.getRequestDispatcher("/WEB-INF/views/web/register.jsp").forward(req, resp);
         }
     }
 }

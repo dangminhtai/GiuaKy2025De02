@@ -1,23 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <html>
+    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+        <html>
 
-    <head>
-        <title>Đăng Nhập</title>
-    </head>
+        <head>
+            <title>Đăng Nhập</title>
+        </head>
 
-    <body>
-        <h1>Đăng Nhập</h1>
-        <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1">
+        <body>
+            <h1>Đăng Nhập</h1>
+
+            <c:if test="${not empty message}">
+                <div class="alert alert-info">${message}</div>
+            </c:if>
+
+            <form action="<c:url value='/login'/>" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+            </form>
+            <div class="mt-3">
+                <p>Chưa có tài khoản? <a href="<c:url value='/register'/>">Đăng ký ngay</a></p>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </body>
+        </body>
 
-    </html>
+        </html>
