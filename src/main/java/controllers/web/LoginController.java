@@ -38,7 +38,12 @@ public class LoginController extends HttpServlet {
         if (user != null) {
             HttpSession session = req.getSession(true);
             session.setAttribute("account", user);
-            resp.sendRedirect(req.getContextPath() + "/home");
+
+            if (user.isAdmin()) {
+                resp.sendRedirect(req.getContextPath() + "/admin/home");
+            } else {
+                resp.sendRedirect(req.getContextPath() + "/home");
+            }
         } else {
             req.setAttribute("message", "Tài khoản hoặc mật khẩu không đúng");
             req.getRequestDispatcher("/WEB-INF/views/web/login.jsp").forward(req, resp);

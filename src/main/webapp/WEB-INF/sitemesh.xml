@@ -1,0 +1,10 @@
+<sitemesh>
+    <!-- Admin Decorator -->
+    <mapping path="/admin/*" decorator="/decorators/admin.jsp"/>
+
+    <!-- Web Decorator (Default) -->
+    <mapping path="/*" decorator="/decorators/web.jsp"/>
+    
+    <!-- Exclude typical static resources or async endpoints if necessary -->
+    <!-- <mapping path="/api/*" exclude="true"/> -->
+</sitemesh>

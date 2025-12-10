@@ -1,19 +1,91 @@
 package models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
-    private String username; // [cite: 58]
-    private String password; // [cite: 61]
-    private String phone;    // [cite: 64]
-    private String fullname; // [cite: 67]
-    private String email;    // [cite: 69]
-    private boolean admin;   // [cite: 71]
-    private boolean active;  // [cite: 73]
-    private String images;   // [cite: 75]
+    private String username;
+    private String password;
+    private String phone;
+    private String fullname;
+    private String email;
+    private boolean admin;
+    private boolean active;
+    private String images;
+
+    public User() {
+    }
+
+    public User(String username, String password, String phone, String fullname, String email, boolean admin,
+            boolean active, String images) {
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.fullname = fullname;
+        this.email = email;
+        this.admin = admin;
+        this.active = active;
+        this.images = images;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
 }
