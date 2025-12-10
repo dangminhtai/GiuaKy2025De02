@@ -2,12 +2,12 @@
     <html>
 
     <head>
-        <title>Trang Chủ</title>
+        <title>Trang Quản Trị</title>
     </head>
 
     <body>
-        <h1>Chào mừng đến với hệ thống Giữa Kỳ</h1>
-        <p>Đây là trang chủ.</p>
+        <h1>Chào mừng Admin</h1>
+        <p>Đây là khu vực dành cho quản trị viên.</p>
     </body>
 
     </html>

@@ -2,12 +2,12 @@
     <html>
 
     <head>
-        <title>Trang Chủ</title>
+        <title>Sản Phẩm</title>
     </head>
 
     <body>
-        <h1>Chào mừng đến với hệ thống Giữa Kỳ</h1>
-        <p>Đây là trang chủ.</p>
+        <h1>Danh sách sản phẩm</h1>
+        <p>Nội dung sản phẩm sẽ hiển thị ở đây.</p>
     </body>
 
     </html>
