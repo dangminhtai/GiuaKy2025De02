@@ -1,34 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="sitemesh" uri="http://www.sitemesh.org/" %>
-            <!DOCTYPE html>
-            <html>
+<!DOCTYPE html>
+<html>
 
-            <head>
-                <meta charset="UTF-8">
-                <title>
-                    <sitemesh:write property='title' /> - Admin
-                </title>
-                <!-- Bootstrap CSS -->
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-                <sitemesh:write property='head' />
-            </head>
+<head>
+    <meta charset="UTF-8">
+    <title>${title} - Admin</title>
 
-            <body>
-                <!-- Header -->
-                <jsp:include page="/common/header.jsp"></jsp:include>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                <!-- Main Content -->
-                <div class="container mt-4">
-                    <h1>Admin Dashboard</h1>
-                    <sitemesh:write property='body' />
-                </div>
+    ${head}
+</head>
 
-                <!-- Footer -->
-                <jsp:include page="/common/footer.jsp"></jsp:include>
+<body>
 
-                <!-- Bootstrap JS -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-            </body>
+    <!-- Header -->
+    <jsp:include page="/common/header.jsp"></jsp:include>
 
-            </html>
+    <div class="container mt-4">
+        <h1>Admin Dashboard</h1>
+        ${body}
+    </div>
+
+    <!-- Footer -->
+    <jsp:include page="/common/footer.jsp"></jsp:include>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
