@@ -4,6 +4,8 @@ import java.util.List;
 import models.User;
 
 public interface IUserDao {
+    List<User> findAll(int page, int pageSize);
+
     List<User> findAll();
 
     User findById(int id);
@@ -14,7 +16,9 @@ public interface IUserDao {
 
     void update(User user);
 
-    void delete(int id);
+    void delete(String username);
+
+    int count();
 
     boolean checkLogin(String username, String password);
 }

@@ -2,6 +2,7 @@ package services;
 
 import dao.IUserDao;
 import dao.UserDaoImpl;
+import java.util.List;
 import models.User;
 
 public class UserServiceImpl implements IUserService {
@@ -42,5 +43,25 @@ public class UserServiceImpl implements IUserService {
         newUser.setActive(true);
         userDao.insert(newUser);
         return true;
+    }
+
+    @Override
+    public List<User> findAll(int page, int pageSize) {
+        return userDao.findAll(page, pageSize);
+    }
+
+    @Override
+    public int count() {
+        return userDao.count();
+    }
+
+    @Override
+    public void delete(String username) {
+        userDao.delete(username);
+    }
+
+    @Override
+    public void update(User user) {
+        userDao.update(user);
     }
 }

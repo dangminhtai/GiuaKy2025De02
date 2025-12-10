@@ -25,6 +25,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<c:url value='/admin/home'/>">Trang quản trị</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<c:url value='/admin/users'/>">Quản lý User</a>
+                                </li>
                             </c:if>
                     </ul>
                 </div>
